@@ -1,0 +1,12 @@
+@mixin padding-v($value1, $value2) {
+  padding: {
+    top: $value1;
+    bottom: $value2;
+  }
+}
+@mixin padding-h($value) {
+  padding: {
+    left: $value;
+    right: $value;
+  }
+}

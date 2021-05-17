@@ -1,0 +1,304 @@
+@media all and (max-width: 1024px) {
+  body {
+    text-align: center;
+  }
+  main {
+    header {
+      justify-content: space-between;
+      position: relative;
+      @include padding-v(10vw, 5vw);
+      @include padding-h(5vw);
+      .header {
+        &-logo {
+          width: 50vw;
+          height: 100%;
+        }
+        &-nav {
+          width: fit-content;
+          .mobile-menu {
+            display: block;
+            width: 10vw;
+            svg {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+            &:hover {
+              cursor: pointer;
+            }
+          }
+          .menu {
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            z-index: 2;
+            transform: translateX(-50%);
+            overflow: hidden;
+            flex-flow: column nowrap;
+            gap: 7vw;
+            background: $dark-violet;
+            color: white;
+            font-weight: 700;
+            font-size: 4vw;
+            border-radius: 2vw;
+            width: 90%;
+            height: 95vw;
+            padding: 10vw 10vw;
+            ul {
+              flex-flow: column nowrap;
+              gap: 7vw;
+              padding-bottom: 10vw;
+              border-bottom: 1px solid $gray;
+            }
+            .login {
+              margin-left: 0;
+            }
+            .header-btn {
+              width: 100%;
+              height: 14vw;
+              border-radius: 65px;
+              font-size: inherit;
+            }
+            &.hide {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+    .intro {
+      height: fit-content;
+      padding: 0 0 40vw;
+      position: static;
+      flex-flow: column nowrap;
+      .intro {
+        &-img {
+          order: -1;
+          width: 100vw;
+          height: 90vw;
+          position: relative;
+          background: url('../images/illustration-working.svg') no-repeat left
+            0vw top 0 / 135%;
+        }
+        &-info {
+          padding-top: 4vw;
+          @include padding-h(5vw);
+          align-items: center;
+          gap: 4vw;
+          width: 100%;
+          height: fit-content;
+          .intro {
+            &-header {
+              font-size: 10.5vw;
+              color: $very-dark-blue;
+              font-weight: 700;
+              line-height: 120%;
+            }
+            &-text {
+              font-size: 4.6vw;
+              font-weight: 500;
+              color: $grayish-violet;
+            }
+            &-btn {
+              margin: none;
+              height: 15vw;
+              width: 60vw;
+              border-radius: 65px;
+              font-size: 5vw;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+    .content {
+      @include padding-v(25vw, 20vw);
+      .form {
+        top: 0;
+        left: 50%;
+        width: 90%;
+        transform: translate(-50%, -50%);
+        background: url('../images/bg-shorten-mobile.svg') no-repeat top 0 right
+            0 / 80%,
+          $dark-violet;
+        border-radius: 10px;
+        @include padding-v(5vw, 5vw);
+        @include padding-h(5vw);
+        flex-flow: column nowrap;
+        .form {
+          &-url,
+          &-btn {
+            width: 100%;
+            height: 10vw;
+            border-radius: 5px;
+            font-size: 3.5vw;
+          }
+          &-url {
+            padding-left: 3vw;
+            margin-bottom: 2vw;
+            border: 5px solid transparent;
+            &.error {
+              border: 5px solid $red;
+            }
+          }
+          &-btn {
+            margin-top: 3vw;
+            order: 1;
+          }
+          &-err {
+            color: $red;
+            font-style: italic;
+            text-align: start;
+            font-size: 3vw;
+          }
+        }
+      }
+      .result {
+        gap: 5vw;
+        margin: 0 auto;
+        .result-container {
+          width: 100%;
+          flex-flow: column nowrap;
+          align-items: unset;
+          border-radius: 10px;
+          gap: 0;
+          padding: 0;
+          .url {
+            &-long,
+            &-short {
+              min-height: 12vw;
+              padding: 5vw 5vw;
+              text-align: left;
+              display: flex;
+              align-items: center;
+              font-size: 3vw;
+              overflow-x: auto;
+              word-wrap: break-word;
+            }
+            &-long {
+              color: $very-dark-violet;
+              border-bottom: 1px solid $grayish-violet;
+            }
+            &-short {
+              margin-left: 0;
+            }
+            &-copy {
+              font-size: 3.5vw;
+              align-self: center;
+              width: 90%;
+              height: 10vw;
+              border-radius: 10px;
+              margin-bottom: 4vw;
+            }
+          }
+        }
+      }
+      .content-info {
+        margin: 10vw 0 0;
+        .text {
+          .content-header {
+            font-size: 7.5vw;
+          }
+          .content-txt {
+            width: 100%;
+            margin: 3vw 0 0;
+            font-size: 4.5vw;
+          }
+        }
+      }
+      .content-ads {
+        margin: 25vw 0 0;
+        flex-flow: column nowrap;
+        gap: 20vw;
+        height: fit-content;
+        &::before {
+          height: 100%;
+          width: 3%;
+          height: 100%;
+          background: $cyan;
+          position: absolute;
+          content: '';
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          z-index: 0;
+        }
+        .ads-container {
+          padding: 10vw 10vw 10vw;
+          min-height: 70vw;
+          .ads {
+            &-img {
+              left: 50%;
+              transform: translate(-50%, -50%);
+              width: 20vw;
+              height: 20vw;
+              img {
+                width: 50%;
+              }
+            }
+            &-h {
+              font-size: 6.5vw;
+            }
+            &-txt {
+              font-size: 3.9vw;
+            }
+          }
+        }
+      }
+    }
+    .outro {
+      height: 70vw;
+      background: url('../images/bg-boost-mobile.svg') no-repeat top right /
+          100% 100%,
+        $dark-violet;
+      gap: 5%;
+      .outro {
+        &-h {
+          font-size: 7vw;
+        }
+        &-btn {
+          width: 60vw;
+          height: 15vw;
+          border-radius: 70px;
+          font-size: 5.5vw;
+        }
+      }
+    }
+    footer {
+      flex-flow: column nowrap;
+      align-items: center;
+      justify-content: center;
+      gap: 10vw;
+      padding: 15vw 0;
+
+      .footer {
+        &-logo {
+          margin-left: 10vw;
+          width: 45vw;
+        }
+        &-nav {
+          flex-flow: column nowrap;
+          gap: 10vw;
+          li {
+            font-size: 3vw;
+          }
+          .li-h {
+            margin: 0 0 5vw;
+          }
+          .li-i {
+            margin: 0 0 2.5vw;
+          }
+        }
+      }
+      .social {
+        gap: 5vw;
+        .social-container {
+          align-items: center;
+        }
+      }
+    }
+  }
+  .attribution {
+    font-size: 2.5vw;
+  }
+}

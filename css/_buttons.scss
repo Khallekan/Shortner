@@ -1,0 +1,15 @@
+button {
+  outline: none;
+  border: none;
+  &.btn {
+    background: $cyan;
+    text-transform: capitalize;
+    font-weight: 700;
+    color: white;
+    font-size: inherit;
+    &:hover {
+      cursor: pointer;
+      background: lighten($cyan, 15%);
+    }
+  }
+}

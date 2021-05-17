@@ -1,0 +1,346 @@
+body {
+  display: grid;
+  grid-template-rows: 1fr auto;
+
+  main {
+    grid-row: 1/2;
+  }
+  .attribution {
+    grid-row: 2/3;
+  }
+}
+
+main {
+  header {
+    padding: 1.7em 7%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    .header {
+      &-logo {
+        width: 15%;
+        svg {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+      &-nav {
+        width: 80%;
+        font-size: 1.2em;
+        font-weight: 700;
+        color: $grayish-violet;
+        .mobile-menu {
+          display: none;
+        }
+        .menu {
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+          gap: 1.5rem;
+          ul {
+            display: flex;
+            flex-flow: row nowrap;
+            gap: 1.5rem;
+            li:hover {
+              color: $very-dark-blue;
+            }
+          }
+          .login {
+            display: block;
+            margin-left: auto;
+            &:hover {
+              color: $very-dark-blue;
+            }
+          }
+          .header-btn {
+            font-size: 1.2rem;
+            height: 3rem;
+            width: 9rem;
+            border-radius: 65px;
+          }
+        }
+      }
+    }
+  }
+  .intro {
+    padding: 0 7%;
+    height: 45rem;
+    display: flex;
+    flex-flow: row nowrap;
+    position: relative;
+
+    .intro {
+      &-img {
+        order: 1;
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: url('../images/illustration-working.svg') no-repeat center
+          left 5em / contain;
+      }
+      &-info {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        width: 50%;
+
+        .intro {
+          &-header {
+            font-size: 4.5em;
+            line-height: 1.1em;
+          }
+          &-text {
+            font-size: 1.3em;
+            color: $grayish-violet;
+            margin-top: 0.5rem;
+          }
+          &-btn {
+            margin-top: 2em;
+            width: 11em;
+            height: 4em;
+            border-radius: 65px;
+            font-size: 1.4em;
+          }
+        }
+      }
+    }
+  }
+  .content {
+    position: relative;
+    background: lighten($gray, 18);
+    padding: 6rem 7%;
+    min-height: 70rem;
+    .form {
+      position: absolute;
+      top: 0;
+      transform: translateY(-50%);
+      width: calc(100% - 14%);
+      padding: 2.5rem 2rem;
+      background: url('../images/bg-shorten-desktop.svg') no-repeat top right /
+          100%,
+        $dark-violet;
+      border-radius: 0.5rem;
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      gap: 2%;
+      .form {
+        &-url,
+        &-btn {
+          height: 3.5rem;
+          border-radius: 0.5rem;
+          font-size: 1.2rem;
+        }
+        &-url {
+          width: 80%;
+          outline: none;
+          border: 0.2rem solid transparent;
+          padding-left: 2.5%;
+          &.error {
+            border: 0.2rem solid $red;
+            &::placeholder {
+              color: $red;
+            }
+          }
+        }
+        &-btn {
+          width: 18%;
+        }
+        &-err {
+          order: 1;
+          display: none;
+        }
+      }
+    }
+    .result {
+      display: flex;
+      flex-flow: column nowrap;
+      gap: 1.2rem;
+      .result-container {
+        display: flex;
+        align-items: center;
+        background: white;
+        gap: 2rem;
+        padding: 1.5rem 2rem;
+        .url {
+          &-long,
+          &-short {
+            font-size: 1.2rem;
+          }
+          &-short {
+            margin-left: auto;
+            color: $cyan;
+          }
+          &-copy {
+            font-size: 1.2rem;
+            width: 10%;
+            height: 3rem;
+            border-radius: 0.3rem;
+            &.copied {
+              background: $dark-violet;
+            }
+          }
+        }
+      }
+    }
+    .content-info {
+      margin: 10em 0 0;
+      .text {
+        text-align: center;
+        .content-header {
+          color: $dark-violet;
+          font-size: 2.5em;
+        }
+        .content-txt {
+          width: 40%;
+          color: $grayish-violet;
+          margin: 0.5em auto;
+          font-size: 1em;
+        }
+      }
+    }
+    .content-ads {
+      display: flex;
+      flex-flow: row nowrap;
+      gap: 2%;
+      position: relative;
+      height: 23rem;
+      // background: black;
+      margin: 7rem 0 0;
+      &::before {
+        width: 100%;
+        height: 0.5em;
+        content: '';
+        background: $cyan;
+        position: absolute;
+        top: 45%;
+      }
+      .ads-container {
+        border-radius: 0.4rem;
+        position: relative;
+        z-index: 1;
+        background: white;
+        height: 17rem;
+        padding: 2em;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        &.ad-2 {
+          align-self: center;
+        }
+        &.ad-3 {
+          align-self: flex-end;
+        }
+        .ads {
+          &-img {
+            position: absolute;
+            top: 0;
+            left: 2em;
+            width: 6em;
+            height: 6em;
+            transform: translateY(-50%);
+            border-radius: 50%;
+            background: $dark-violet;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img {
+              width: 50%;
+            }
+          }
+          &-h {
+            font-size: 1.3em;
+            color: $very-dark-violet;
+          }
+          &-txt {
+            color: $grayish-violet;
+            margin: 5% 0 0;
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+  .outro {
+    height: 15rem;
+    background: url('../images/bg-boost-desktop.svg') no-repeat top / 100% 100%,
+      $dark-violet;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+    .outro {
+      &-h {
+        color: white;
+        font-size: 2em;
+      }
+      &-btn {
+        width: 10em;
+        height: 2.7em;
+        border-radius: 70px;
+        font-size: 1.5em;
+      }
+    }
+  }
+  footer {
+    padding: 5rem 7%;
+    background: $very-dark-violet;
+    color: white;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    .footer {
+      &-logo {
+        width: 17%;
+        path {
+          fill: white;
+        }
+      }
+      &-nav {
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 5rem;
+        li {
+          font-size: 1.1rem;
+        }
+        .li-h {
+          margin: 0 0 1.5rem;
+        }
+        .li-i {
+          margin: 0 0 1rem;
+          color: $gray;
+        }
+      }
+    }
+    .social {
+      display: flex;
+      gap: 2rem;
+      .social-container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        &:hover {
+          cursor: pointer;
+          path {
+            fill: $grayish-violet;
+          }
+        }
+      }
+    }
+  }
+}
+.attribution {
+  text-align: center;
+  background: $very-dark-violet;
+  font-size: 1.2em;
+  color: white;
+  a {
+    color: $cyan;
+  }
+}
