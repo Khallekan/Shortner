@@ -153,6 +153,10 @@ main {
         }
         &-err {
           order: 1;
+          width: 100%;
+          color: $red;
+          font-style: italic;
+          font-size: 1.2rem;
           display: none;
         }
       }
@@ -181,6 +185,9 @@ main {
             width: 10%;
             height: 3rem;
             border-radius: 0.3rem;
+            &:hover {
+              cursor: copy;
+            }
             &.copied {
               background: $dark-violet;
             }
@@ -311,10 +318,17 @@ main {
         }
         .li-h {
           margin: 0 0 1.5rem;
+          &:hover {
+            cursor: default;
+          }
         }
         .li-i {
           margin: 0 0 1rem;
           color: $gray;
+          &:hover {
+            cursor: pointer;
+            color: $cyan;
+          }
         }
       }
     }
@@ -328,7 +342,7 @@ main {
         &:hover {
           cursor: pointer;
           path {
-            fill: $grayish-violet;
+            fill: $cyan;
           }
         }
       }

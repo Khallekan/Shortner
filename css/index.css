@@ -278,6 +278,10 @@ main .content .form .form-err {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
+  width: 100%;
+  color: #f46262;
+  font-style: italic;
+  font-size: 1.2rem;
   display: none;
 }
 
@@ -318,6 +322,10 @@ main .content .result .result-container .url-copy {
   width: 10%;
   height: 3rem;
   border-radius: 0.3rem;
+}
+
+main .content .result .result-container .url-copy:hover {
+  cursor: copy;
 }
 
 main .content .result .result-container .url-copy.copied {
@@ -507,9 +515,18 @@ main footer .footer-nav .li-h {
   margin: 0 0 1.5rem;
 }
 
+main footer .footer-nav .li-h:hover {
+  cursor: default;
+}
+
 main footer .footer-nav .li-i {
   margin: 0 0 1rem;
   color: #bfbfbf;
+}
+
+main footer .footer-nav .li-i:hover {
+  cursor: pointer;
+  color: #2acfcf;
 }
 
 main footer .social {
@@ -536,7 +553,7 @@ main footer .social .social-container:hover {
 }
 
 main footer .social .social-container:hover path {
-  fill: #9e9aa7;
+  fill: #2acfcf;
 }
 
 .attribution {
@@ -728,8 +745,6 @@ main footer .social .social-container:hover path {
             order: 1;
   }
   main .content .form .form-err {
-    color: #f46262;
-    font-style: italic;
     text-align: start;
     font-size: 3vw;
   }
